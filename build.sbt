@@ -1,5 +1,4 @@
 import sbt.Project.projectToRef
-import play.PlayImport.PlayKeys._
 
 name := "Scalajs"
 
@@ -10,7 +9,6 @@ lazy val scalaV = "2.11.6"
 
 lazy val server = (project in file("server")).settings(
   scalaVersion := scalaV,
-  // routesImport += "config.Routes._",
   scalaJSProjects := clients,
   pipelineStages := Seq(scalaJSProd),
   libraryDependencies ++= Seq(
@@ -18,7 +16,7 @@ lazy val server = (project in file("server")).settings(
     "org.webjars" %% "webjars-play" % "2.3.0",
     "org.webjars" % "jquery" % "2.1.1"
   )
- ).enablePlugins(PlayScala).
+).enablePlugins(PlayScala).
   aggregate(clients.map(projectToRef): _*).
   dependsOn(sharedJvm)
 
