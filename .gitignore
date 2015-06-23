@@ -15,5 +15,21 @@ dist
 /RUNNING_PID
 /.settings
 
+# Hidden cross project folders
+shared/.js
+shared/.jvm
+
+# Temp files
+.~*
+*~
+*.orig
+
+# Eclipse
+.scala_dependencies
+.buildpath
+.cache
+.target
+bin/
+
 # Mac
 .DS_Store
