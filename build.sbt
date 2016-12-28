@@ -14,7 +14,8 @@ lazy val server = (project in file("server")).settings(
   libraryDependencies ++= Seq(
     "com.vmunier" %% "play-scalajs-scripts" % "0.2.1",
     "org.webjars" %% "webjars-play" % "2.3.0",
-    "org.webjars" % "jquery" % "2.1.1"
+    "org.webjars" % "jquery" % "2.1.1",
+    "com.typesafe" % "config" % "1.3.0"
   )
 ).enablePlugins(PlayScala).
   aggregate(clients.map(projectToRef): _*).
